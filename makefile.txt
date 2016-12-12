@@ -1,0 +1,29 @@
+JFLAGS=-g                             
+JC=javac                              
+.SUFFIXES:.java .class                
+.java.class:                          
+	$(JC) $(JFLAGS) $*.java
+	
+CLASSES = \
+        Acceptor.java \
+        Packet.java \
+        TCPConnection.java \
+        Client.java \
+        AcceptorClient.java \
+        TCPSeverThread.java \
+        Connection.java \
+        AcceptorListener.java \
+        ClientListener.java \
+        Server.java \
+        Learner.java \
+        Messenger.java \
+        Proposer.java \
+        ProposerThread.java \
+        ServerConnection.java \
+	
+default: classes                      
+
+classes: $(CLASSES:.java=.class)
+
+clean:                                
+	$(RM) *.class 
